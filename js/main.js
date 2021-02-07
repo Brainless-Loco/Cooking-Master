@@ -14,7 +14,7 @@ myfunction = (id) => {
         <h3 class="h4 text-light">${mealId.strMeal}</h3>
         <hr class="col-5 mx-auto bg-light">
         <div class="text-left text-white">
-            <p>Area: ${mealId}<br>Category: ${mealId.strCategory}</p>
+            <p>Area: ${mealId.strArea}<br>Category: ${mealId.strCategory}</p>
             <h5 class="text-white h5">Ingredients:</h5>
             <ul id="allIngre" class="ml-4 text-light">
             </ul>
@@ -86,4 +86,5 @@ searchButton.addEventListener("click", () => {
             })
     }
     document.getElementById("search-bar").value = "";
+    document.getElementById("single-item").innerHTML = "";
 });
