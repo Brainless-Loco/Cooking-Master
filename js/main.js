@@ -23,7 +23,7 @@ myfunction = (id) => {
         </div>
         <br>
         <br>
-        <a href=" ${mealId.strYoutube}" class="text-danger text-center bg-white p-2 rounded">Watch the Process</a>
+        <a href=" ${mealId.strYoutube}" class="text-danger text-center bg-white p-2 rounded" target="_blank">Watch the Process</a>
     `;
     getContainer.innerHTML = markup;
 

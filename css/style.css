@@ -12,6 +12,9 @@ a{
     text-decoration: none;
     cursor: pointer;
 }
+a:hover{
+    text-decoration: none;
+}
 ul,ol{
     list-style: none;
 }
@@ -35,4 +38,7 @@ input{
 .img-2{
     height: 170px;
     width: 200px;
+}
+.seach-result{
+    min-height: 350px;
 }
