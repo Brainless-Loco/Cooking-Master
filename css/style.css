@@ -3,6 +3,7 @@
     margin: 0px 0px;
     padding: 0px 0px;
     font-family: 'Lemonada', cursive;
+    scroll-behavior: smooth;
 }
 body{
     background-color: #2d3436;
@@ -21,7 +22,7 @@ input{
     border-radius: 15px !important;
 }
 .img-1{
-    max-height: 500px;
+    max-height: 200px;
 }
 .searched-item{
     width: 200px;

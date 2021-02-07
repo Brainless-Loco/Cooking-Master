@@ -1,31 +1,47 @@
-myfunction = function (id) {
+myfunction = (id) => {
     // console.log(id.slice(7));
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
     let idNo = id.slice(7);
     let getContainer = document.getElementById("single-item");
-    let markUp = `
-        <img src="image/4.png" class="img-fluid rounded img-1" alt="">
+    getContainer.innerHTML = "";
+    let mealId = arrayOfAllMeals[idNo];
+    let markup = `
+        <img src="${mealId.strMealThumb}" class="img-fluid rounded img-1" alt="">
         <br>
         <br>
-        <h3 class="h4 text-light">Recipe name</h3>
-        <div>
-        </div>
+        <h3 class="h4 text-light">${mealId.strMeal}</h3>
         <hr class="col-5 mx-auto bg-light">
         <div class="text-left text-white">
-            <p>Area: </p>
-            <p>Category: </p>
+            <p>Area: ${mealId}<br>Category: ${mealId.strCategory}</p>
             <h5 class="text-white h5">Ingredients:</h5>
-            <ul id="allItems" class="ml-4 text-light">
-                <li>
-                    <p><i class="far fa-hand-point-right"></i> this no 1</p>
-                </li>
+            <ul id="allIngre" class="ml-4 text-light">
             </ul>
-            <p>Instruction: </p>
-            <small class="font-italic">Tags: </small>
+            <p><span class="text-warning">Instruction:</span><br>${mealId.strInstructions}</p>
+            <small class="font-italic">Tags:  ${mealId.strTags}</small>
         </div>
         <br>
         <br>
-        <a href="" class="text-danger text-center bg-white p-2 rounded">Watch the Process</a>
+        <a href=" ${mealId.strYoutube}" class="text-danger text-center bg-white p-2 rounded">Watch the Process</a>
     `;
+    getContainer.innerHTML = markup;
+
+    let ulOfInge = document.getElementById("allIngre");
+    const nameofIng = "strIngredient1";
+    const measureofIng = "strMeasure1";
+    for(let i = 1; i<=100 ;i++){
+        if(mealId[nameofIng+i] == undefined || mealId[nameofIng+i] == null || mealId[nameofIng+i] ==""){
+            break;
+        }
+        let newIng = `
+            <li>
+                <p><i class="far fa-hand-point-right text-primary mr-2"></i> ${mealId[measureofIng+i]} ${mealId[nameofIng+i]}</p>
+            </li>
+        `;
+        ulOfInge.innerHTML += newIng;
+    }
+    // console.log(mealId.strIngredient1);
 }
 var arrayOfAllMeals = [];
 const api = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
